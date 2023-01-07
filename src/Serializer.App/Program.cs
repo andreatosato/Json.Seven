@@ -1,6 +1,8 @@
 ﻿
+using Serializer.App;
 using Serializer.App.Entities;
 using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 
 var student = new Student("Andrea", "Tosato", "AT2023")
 {
@@ -20,4 +22,22 @@ void WriteJson(Person person)
     var option = new JsonSerializerOptions { WriteIndented = true };
     var jsonValue = JsonSerializer.Serialize(person, option);
     Console.WriteLine(jsonValue);
+}
+
+
+WriteMasked();
+void WriteMasked()
+{
+    var options = new JsonSerializerOptions
+    {
+        TypeInfoResolver = new DefaultJsonTypeInfoResolver
+        {
+            Modifiers = { JsonSerializerModifiers.MaskMemberAttribute }
+        }
+    };
+
+    var item = new LupinManager { Address = "Via Veneto, 99", PassCode = "PizzaKebab" };
+    var result = JsonSerializer.Serialize(item, options);
+
+    Console.WriteLine(result);
 }
