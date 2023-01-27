@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serializer.App", "Serialize
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grpc.App", "Grpc.App\Grpc.App.csproj", "{9DCD1827-6AE4-49E7-A5C9-6EA2AA46B940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grpc.ClientApp", "Grpc.ClientApp\Grpc.ClientApp.csproj", "{0E2DA669-1953-4C92-9530-81F5A9C35FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grpc.ClientApp", "Grpc.ClientApp\Grpc.ClientApp.csproj", "{0E2DA669-1953-4C92-9530-81F5A9C35FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database.App", "Database.App\Database.App.csproj", "{EE942513-66B0-4B13-9495-CDDBC4AB91CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0E2DA669-1953-4C92-9530-81F5A9C35FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E2DA669-1953-4C92-9530-81F5A9C35FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E2DA669-1953-4C92-9530-81F5A9C35FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE942513-66B0-4B13-9495-CDDBC4AB91CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE942513-66B0-4B13-9495-CDDBC4AB91CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE942513-66B0-4B13-9495-CDDBC4AB91CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE942513-66B0-4B13-9495-CDDBC4AB91CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
