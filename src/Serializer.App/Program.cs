@@ -16,6 +16,7 @@ var uniStudent = new UniversityStudent("Andrea", "Tosato", "AT-UNI-2023")
 };
 WriteJson(uniStudent);
 
+JsonSerializer.Serialize(student, MyJsonContext.Default.Person);
 
 void WriteJson(Person person)
 {
