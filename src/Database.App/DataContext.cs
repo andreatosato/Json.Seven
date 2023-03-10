@@ -1,14 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+﻿using Database.App.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Database.App.Entities;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.Extensions.Logging;
 
 namespace Database.App;
 
@@ -31,19 +24,6 @@ public class DataContext : DbContext
                 ownedNavigationBuilder.ToJson();
                 ownedNavigationBuilder.OwnsOne(contactDetails => contactDetails.Address);
             });
-
-        #region PostMetadataConfig
-        modelBuilder.Entity<Post>().OwnsOne(
-            post => post.Metadata, ownedNavigationBuilder =>
-            {
-                ownedNavigationBuilder.ToJson();
-                ownedNavigationBuilder.OwnsMany(metadata => metadata.TopSearches);
-                ownedNavigationBuilder.OwnsMany(metadata => metadata.TopGeographies);
-                ownedNavigationBuilder.OwnsMany(
-                    metadata => metadata.Updates,
-                    ownedOwnedNavigationBuilder => ownedOwnedNavigationBuilder.OwnsMany(update => update.Commits));
-            });
-        #endregion
 
         base.OnModelCreating(modelBuilder);
     }
